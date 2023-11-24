@@ -27,7 +27,7 @@ previewPictrure();
 
 //Validation et vérification formulaire
 
-function validationFormulaire() {
+async function validationFormulaire() {
   //Capture de l'élément seléctionné
 
   let selectionFichier = document.getElementById("selectioner").files[0];
@@ -64,7 +64,7 @@ function validationFormulaire() {
 
   // Envoie FormData dans la requète poste
 
-  fetch("http://localhost:5678/api/works", {
+  await fetch("http://localhost:5678/api/works", {
     method: "POST",
     headers: {
       Authorization: "Bearer " + token,

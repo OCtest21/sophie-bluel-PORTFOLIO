@@ -22,10 +22,10 @@ miniatures.addEventListener("click", (e) => {
 
 // Reqète de supression API
 
-function suppression(idDuBouton) {
+async function suppression(idDuBouton) {
   const token = localStorage.getItem("token");
 
-  fetch(`http://localhost:5678/api/works/${idDuBouton}`, {
+  await fetch(`http://localhost:5678/api/works/${idDuBouton}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -43,4 +43,5 @@ function suppression(idDuBouton) {
     .catch((ERROR) => {
       alert(ERROR);
     });
+  e.preventDefault();
 }
